@@ -1,2 +1,1 @@
-Hello! There isn't much here. Check up in a bit.
-
+Finally! There is documentation on one thing!
