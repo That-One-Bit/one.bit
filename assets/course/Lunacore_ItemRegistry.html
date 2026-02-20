@@ -8252,14 +8252,7 @@ a.Search--Result:focus {
     height: 50.4px;
     border-radius: 0rem;
     border-left-style: solid;
-">Change BG</button></ul></div></div><div id="background_anim" class="flex--grow flexbox flex--direction--column View--centralPanel" style="
-    background-image: url(../images/BGs/plainsbirch_sunset.gif);
-    background-color: #757575;
-    background-blend-mode: overlay;
-    margin-left: -1150px;
-    background-size: cover;
-    image-rendering: pixelated;
-"><div class="flex--grow flexbox flex--direction--column" style="
+">Change BG</button></ul></div></div><div id="background_anim" class="flex--grow flexbox flex--direction--column View--centralPanel" style="background-image: url(&quot;assets/images/BGs/tundra_sunset.gif&quot;); background-color: rgb(117, 117, 117); background-blend-mode: overlay; margin-left: -1150px; background-size: cover; image-rendering: pixelated;"><div class="flex--grow flexbox flex--direction--column" style="
 "><div role="region" aria-label="resources" class="Portal--StudentResources showAll" style="
     margin-left: 1150px;
 "><div class="Portal--StudentResources--banners"></div><div id="portal.student.homepage" style="display: none;"></div><div style="display: flex;flex-grow: 0;flex-shrink: 0;flex-flow: wrap;color: white;background-image: url(../images/course/BG.png);width: 900px;height: 900px;background-size: contain;align-content: center;align-items: center;justify-content: center;margin-left: 100px;"><h1 style="
@@ -8272,17 +8265,32 @@ a.Search--Result:focus {
 ">(Link)</a>, and category. This does not mean that items categorized as a "tool" would act as a tool, despite it being in said category. An example of this is from the example "testmod" which adds the "Copper Pickaxe," which, despite having "Pickaxe" in it's name, does not act as one.</p1></div><div style="display: flex;flex-grow: 0;flex-shrink: 0;flex-flow: wrap;color: white;background-size: contain;align-content: center;align-items: center;justify-content: center;"><p1 id="course" style="margin-right: 17rem;margin-top: -105.5rem;margin-left: 700px;font-family: monospace;font-size: 15;font-weight: 560;">Last Modified: 2/17/2026
 </p1></div></div></div></div></div></div><div id="portal.student.boot" style="display: none;"></div></div>
 <script>
+    const images = [
+        "../images/BGs/tundra_sunset.gif",
+        "../images/BGs/tundra_night.gif",
+        "../images/BGs/desert_sunset.gif",
+        "../images/BGs/birchplains_sunset.gif"
+    ];
+
+    let index = 0;
+
     document.getElementById("bgc").addEventListener("click", function () {
         try {
             const box = document.getElementById("background_anim");
             if (!box) {
                 throw new Error("Element not found");
             }
-            // Change background image
-            box.style.backgroundImage = "url('assets/images/BGs/tundra_sunset.gif')";
+
+            // Set background
+            box.style.backgroundImage = `url('${images[index]}')`;
+
+            // Move to next image (loop back to start)
+            index = (index + 1) % images.length;
+
         } catch (error) {
             console.error("Error changing background:", error.message);
         }
     });
 </script>
+
 </body></html>
